@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'ajout-produit',
+    loadChildren: './Produit/ajout-produit/ajout-produit.module#AjoutProduitPageModule'
+  },
+  {
+    path: 'edit-produit/:id',
+    loadChildren: './Produit/edit-produit/edit-produit.module#EditProduitPageModule'
+  },
 ];
 
 @NgModule({

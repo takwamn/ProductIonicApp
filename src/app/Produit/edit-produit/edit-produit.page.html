@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>editProduit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class='ion-padding'  *ngIf="product">
+  
+  <form name='f' #f="ngForm" (ngSubmit)="OnupdateProduct(f.value)" >
+
+      <ion-list>
+        <ion-item>
+          <label>nom</label>
+          <ion-input name="nom" ngModel [(ngModel)]="product.nom"></ion-input>
+
+        </ion-item>
+
+        <ion-item>
+          <ion-label>prix unitaire</ion-label>
+          <ion-input name="prix" ngModel [(ngModel)]="product.prix"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>quantite</ion-label>
+          <ion-input name="qte" ngModel [(ngModel)]="product.qte" ></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      
+      <ion-button [disabled]="f.form.invalid"  class="btn btn-success" type="submit">Enregistrer</ion-button><br><br>
+      <ion-button class="btn btn-success" type="reset">Annuler</ion-button><br><br>
+
+  </form>
+
+</ion-content>
